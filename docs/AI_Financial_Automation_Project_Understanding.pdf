@@ -1,0 +1,335 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R] /Count 5 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 13 0 R /F2 14 0 R /F3 15 0 R /F4 16 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 5335 >>
+stream
+q
+BT /F2 23 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 784.0 Tm (AI Financial Automation) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 745.0 Tm (Project Understanding and Initial Delivery Blueprint) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 731.0 m 547 731.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 717.0 Tm (Project context: AgentAiLearn internship ? Professor-provided use case) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 704.0 Tm (Document purpose: Record the initial shared understanding of the invoice data-capture and) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 691.0 Tm (financial-sheet automation initiative before implementation begins.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 678.0 Tm (Implementation rule: All application code will be created in Code/.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 661.0 Tm () Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 638.0 Tm (1. Executive summary) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 624.0 m 547 624.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 610.0 Tm (AI Financial Automation will reduce manual processing of petty-cash and credit-card invoices) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 597.0 Tm (for Finance. Today, staff read invoices and enter the values into separate tracking sheets.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 584.0 Tm (The stated current effort is approximately 24 staff-hours per week \(two staff members, roughly) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 571.0 Tm (12 hours per sheet\) and the manual process risks data-entry and calculation errors.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 554.0 Tm (The intended solution receives scanned or digital invoices, extracts structured information) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 541.0 Tm (using Azure AI Document Intelligence, routes the result according to invoice type, and gives) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 528.0 Tm (Finance staff a review-and-approval experience. Only approved records are written to the) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 515.0 Tm (appropriate financial tracking store. The original invoice is then archived with searchable) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 502.0 Tm (metadata.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 485.0 Tm (The target outcome is to reduce recurring manual entry to less than two hours per week,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 472.0 Tm (focused on exceptions and approval rather than transcription.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 449.0 Tm (2. Product name) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 435.0 m 547 435.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 421.0 Tm (The recommended website and product title is:) Tj ET
+BT /F2 23 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 404.0 Tm (AI Financial Automation) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 367.0 Tm (It is clear, professional, matches the project repository, and remains broad enough to support) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 354.0 Tm (future financial workflows beyond invoice capture. A suitable page tagline is:) Tj ET
+BT /F3 10.2 Tf 0.04 0.26 0.50 rg 1 0 0 1 66 337.0 Tm (Turn invoices into reviewed financial records?automatically.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 308.8 Tm (3. Users and responsibilities) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 294.8 m 547 294.8 l S
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 280.8 Tm (User / service  |  Responsibility) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 265.8 Tm (|---|---|) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 252.8 Tm (Admin Staff \(Finance\)  |  Upload or scan invoices, review AI-extracted values against the source) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 239.8 Tm (document, correct data where required, and approve or reject entries. The initial direct user group) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 226.8 Tm (is estimated at two people.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 211.8 Tm (SharePoint  |  Receives invoice files, supplies structured archival storage, and hosts or connects) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 198.8 Tm (to financial tracking data.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 183.8 Tm (Azure AI Document Intelligence  |  Reads invoice PDFs/images using a KU-specific trained invoice) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 170.8 Tm (model and returns structured fields with confidence scores.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 155.8 Tm (Power Automate  |  Detects new files, routes workflows, triggers extraction, sends) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 142.8 Tm (notifications/escalations, writes approved records, and coordinates archival.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 127.8 Tm (Teams / email  |  Notifies Finance of newly added rows and \(where required\) review escalation.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 102.8 Tm (4. Scope and end-to-end workflow) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 88.8 m 547 88.8 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 74.8 Tm (There are two separate processing lanes, and they must remain separate in routing, tracking,) Tj ET
+BT /F1 8.0 Tf 0.35 0.42 0.50 rg 1 0 0 1 48 25 Tm (AI Financial Automation  |  Project Understanding  |  Page 1) Tj ET
+Q
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 13 0 R /F2 14 0 R /F3 15 0 R /F4 16 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 5448 >>
+stream
+q
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 788.0 Tm (and archival:) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 771.0 Tm (Lane  |  Source inbox) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 756.0 Tm (|---|---|) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 743.0 Tm (Petty cash invoices  |  /InvoiceInbox/PettyCash/) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 728.0 Tm (Credit card invoices  |  /InvoiceInbox/CreditCard/) Tj ET
+BT /F2 11 Tf 0.04 0.22 0.42 rg 1 0 0 1 48 706.0 Tm (Processing flow) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 686.0 Tm (1. A Finance staff member scans a paper invoice with a mobile scan/camera process,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 673.0 Tm (or submits a digital PDF/image, to the designated SharePoint inbox.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 660.0 Tm (2. A new-file trigger detects the document and routes it based on its SharePoint) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 647.0 Tm (folder.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 634.0 Tm (3. Azure AI Document Intelligence runs the appropriate trained model and returns) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 621.0 Tm (extracted invoice data and per-field confidence scores.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 608.0 Tm (4. The system creates a review item. Any field below 85% confidence is visibly) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 595.0 Tm (flagged for manual attention.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 582.0 Tm (5. Finance staff review the original invoice and extracted values side-by-side,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 569.0 Tm (amend individual fields as necessary, then approve or reject the item.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 556.0 Tm (6. An approved invoice is posted to the corresponding petty-cash or credit-card) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 543.0 Tm (tracking store. Calculations update automatically.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 530.0 Tm (7. The source document is archived in structured SharePoint storage, tagged with) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 517.0 Tm (searchable metadata. Finance receives a Teams/email notice of newly added records.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 504.0 Tm (8. A review item that is not completed within 24 hours is escalated.) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 487.0 Tm (A[Invoice scan or digital PDF/image] --> B{SharePoint inbox folder}) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 474.0 Tm (B -->|Petty cash| C[Petty-cash processing lane]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 461.0 Tm (B -->|Credit card| D[Credit-card processing lane]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 448.0 Tm (C --> E[Azure AI Document Intelligence]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 435.0 Tm (D --> E) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 422.0 Tm (E --> F[Extract fields and confidence]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 409.0 Tm (F --> G[Finance review queue]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 396.0 Tm (G --> H{Approve?}) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 383.0 Tm (H -->|Correct and approve| I[Post to matching tracking store]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 370.0 Tm (H -->|Reject| J[Record rejection and retain audit trail]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 357.0 Tm (I --> K[Auto-calculate totals and balances]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 344.0 Tm (K --> L[Archive invoice with metadata]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 331.0 Tm (L --> M[Notify Finance]) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 304.0 Tm (5. Data to capture) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 290.0 m 547 290.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 276.0 Tm (The extraction model and review form need to support the following fields:) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 259.0 Tm (- Vendor / supplier name) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 246.0 Tm (- Invoice date) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 233.0 Tm (- Invoice number) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 220.0 Tm (- Line items: description, quantity, and unit price) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 207.0 Tm (- Total amount) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 194.0 Tm (- Tax / VAT amount) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 181.0 Tm (- Currency) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 168.0 Tm (- Category \(where available or selected during review\)) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 155.0 Tm (- Confidence score for every extracted field) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 138.0 Tm (The review process must preserve both the AI proposal and the approved/corrected values so) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 125.0 Tm (that the system can be audited and model quality can be measured later.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 102.0 Tm (6. Functional requirements interpreted) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 88.0 m 547 88.0 l S
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 74.0 Tm (ID  |  Requirement  |  Implementation interpretation) Tj ET
+BT /F1 8.0 Tf 0.35 0.42 0.50 rg 1 0 0 1 48 25 Tm (AI Financial Automation  |  Project Understanding  |  Page 2) Tj ET
+Q
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 13 0 R /F2 14 0 R /F3 15 0 R /F4 16 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 6045 >>
+stream
+q
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 788.0 Tm (|---|---|---|) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 775.0 Tm (FR-01.1  |  Extract named invoice fields and display confidence; flag confidence below 85%.  |) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 762.0 Tm (Store field-level extraction results and scores. Apply a clear review-state indicator whenever at) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 749.0 Tm (least one required field is below threshold.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 734.0 Tm (FR-01.2  |  Maintain separate petty-cash and credit-card pipelines; process a new document within) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 721.0 Tm (five minutes.  |  Folder-based routing must be explicit, observable, and retryable. Do not infer) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 708.0 Tm (invoice type solely from AI output.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 693.0 Tm (FR-01.3  |  Provide a side-by-side review interface with edits and approval.  |  This is the primary) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 680.0 Tm (frontend use case. It needs a document viewer, editable structured fields, confidence indicators,) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 667.0 Tm (review status, and approval/rejection actions.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 652.0 Tm (FR-01.4  |  Auto-calculate running totals, VAT totals, and month-to-date balance after approved) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 639.0 Tm (rows.  |  Calculation rules must be defined centrally and updated only after approval; no manual) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 626.0 Tm (spreadsheet formulas should be required.) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 611.0 Tm (FR-01.5  |  Archive processed invoices with vendor/date/amount/type metadata.  |  Archival must) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 598.0 Tm (retain a source-document link and enable search/retrieval under the KU financial-records retention) Tj ET
+BT /F1 7.7 Tf 0.10 0.18 0.29 rg 1 0 0 1 52 585.0 Tm (policy.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 560.0 Tm (7. Frontend-first delivery focus) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 546.0 m 547 546.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 532.0 Tm (Because the review experience is the new use case, the first implementation should make that) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 519.0 Tm (workflow tangible before connecting live cloud services.) Tj ET
+BT /F2 11 Tf 0.04 0.22 0.42 rg 1 0 0 1 48 499.0 Tm (Suggested initial screens) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 479.0 Tm (1. Review queue) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 466.0 Tm (- Counts for pending, low-confidence, overdue, approved, and rejected items.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 453.0 Tm (- Filters for invoice type, status, confidence, vendor, date, and overdue reviews.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 440.0 Tm (- A clear distinction between petty cash and credit card entries.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 423.0 Tm (2. Invoice review workspace) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 410.0 Tm (- Source PDF/image viewer on one side and editable extracted fields on the other.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 397.0 Tm (- Field-level confidence badges and low-confidence highlighting.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 384.0 Tm (- Editable line items and totals with validation.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 371.0 Tm (- Approve, reject, save-draft, and audit-history actions.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 354.0 Tm (3. Tracking / reporting view) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 341.0 Tm (- Approved records only.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 328.0 Tm (- Running total, VAT total, and month-to-date views.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 315.0 Tm (- Search and link back to the archived source invoice.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 298.0 Tm (4. Operational exceptions view) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 285.0 Tm (- Processing failures, duplicate candidates, low-confidence invoices, and review items) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 272.0 Tm (approaching/escalated past 24 hours.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 255.0 Tm (For an early frontend prototype, use realistic local/mock data and clear integration) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 242.0 Tm (boundaries. The UI should not claim data was posted, archived, or extracted by Azure until the) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 229.0 Tm (backend confirms it.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 206.0 Tm (8. Proposed full-stack shape) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 192.0 m 547 192.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 178.0 Tm (The exact framework is still undecided. This logical architecture will let the frontend ship) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 165.0 Tm (early and allow real Microsoft/Azure integrations to be connected later.) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 148.0 Tm (U[Finance user] --> FE[Frontend review application]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 135.0 Tm (FE --> API[Application API]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 122.0 Tm (API --> DB[\(Workflow and audit data\)]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 109.0 Tm (SP[SharePoint inbox and archive] --> WF[Automation / workflow adapter]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 96.0 Tm (WF --> DI[Azure AI Document Intelligence]) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 83.0 Tm (WF --> API) Tj ET
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 70.0 Tm (API --> TS[Tracking store adapter]) Tj ET
+BT /F1 8.0 Tf 0.35 0.42 0.50 rg 1 0 0 1 48 25 Tm (AI Financial Automation  |  Project Understanding  |  Page 3) Tj ET
+Q
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 13 0 R /F2 14 0 R /F3 15 0 R /F4 16 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 5773 >>
+stream
+q
+BT /F4 8.1 Tf 0.16 0.26 0.39 rg 1 0 0 1 62 788.0 Tm (API --> NT[Teams/email notification adapter]) Tj ET
+BT /F2 11 Tf 0.04 0.22 0.42 rg 1 0 0 1 48 764.0 Tm (Recommended domain records) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 744.0 Tm (- Invoice: ID, type, source-file reference, status, submitted time, processed time,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 731.0 Tm (  archive reference.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 718.0 Tm (- Extraction: model/version, raw result, field confidence, extracted line items,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 705.0 Tm (  processing error if any.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 692.0 Tm (- Review: editable proposed/final values, decision, reviewer, timestamps, rejection) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 679.0 Tm (  reason, escalation state.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 666.0 Tm (- Posting: target store, target-row reference, posting timestamp, calculation) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 653.0 Tm (  result/version.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 640.0 Tm (- Audit event: immutable event log for upload, extraction, edits, decisions,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 627.0 Tm (  posting, archival, notifications, and failures.) Tj ET
+BT /F2 11 Tf 0.04 0.22 0.42 rg 1 0 0 1 48 607.0 Tm (Status model) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 587.0 Tm (received ? extracting ? needs_review ? approved ? posted ? archived) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 570.0 Tm (Terminal/exception states should include at least rejected, failed, and escalated. A) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 557.0 Tm (low-confidence result is best modeled as a review flag rather than a terminal state, because) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 544.0 Tm (it still proceeds through human review.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 521.0 Tm (9. Business rules and quality safeguards) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 507.0 m 547 507.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 493.0 Tm (- A document in /InvoiceInbox/PettyCash/ must post only to the petty-cash tracking) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 480.0 Tm (  store; a document in /InvoiceInbox/CreditCard/ must post only to the credit-card) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 467.0 Tm (  store.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 454.0 Tm (- No invoice can be posted until a Finance reviewer approves it.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 441.0 Tm (- Any required field with confidence below 85% must be flagged in the review UI.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 428.0 Tm (- Tracking totals and balances update from approved records only.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 415.0 Tm (- The UI should validate amounts, dates, currency, VAT, and invoice-number format) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 402.0 Tm (  before approval where rules are defined.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 389.0 Tm (- Duplicate detection should be designed before production?at minimum, consider) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 376.0 Tm (  invoice number, vendor, amount, date, and invoice type.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 363.0 Tm (- Every correction and approval needs an audit trail linked to its source document.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 350.0 Tm (- Failure states must be visible and retryable; silent workflow failures are) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 337.0 Tm (  unacceptable for financial records.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 314.0 Tm (10. Dependencies, assumptions, and open decisions) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 300.0 m 547 300.0 l S
+BT /F2 11 Tf 0.04 0.22 0.42 rg 1 0 0 1 48 283.0 Tm (Known dependencies) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 263.0 Tm (- Azure AI Document Intelligence subscription/procurement.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 250.0 Tm (- A KU-specific custom invoice model, trained with a minimum of 20 petty-cash and 20) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 237.0 Tm (  credit-card sample invoices.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 224.0 Tm (- Power Automate capability; a premium connector may be required if it is not) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 211.0 Tm (  already included in the organization?s Microsoft 365 plan.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 198.0 Tm (- SharePoint locations for inbound files, archives, and potentially tracking data.) Tj ET
+BT /F2 11 Tf 0.04 0.22 0.42 rg 1 0 0 1 48 178.0 Tm (Open decisions requiring confirmation) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 158.0 Tm (1. Tracking store: SharePoint List or Excel Online. A SharePoint List is generally) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 145.0 Tm (the safer operational default for structured, concurrent workflow data; Excel may) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 132.0 Tm (be retained if it is a hard business constraint.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 119.0 Tm (2. Technical stack: frontend framework, backend/API platform, database, and) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 106.0 Tm (authentication/role model.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 93.0 Tm (3. Field mapping: exact columns, category taxonomy, line-item handling, VAT rules,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 80.0 Tm (and rounding/currency rules.) Tj ET
+BT /F1 8.0 Tf 0.35 0.42 0.50 rg 1 0 0 1 48 25 Tm (AI Financial Automation  |  Project Understanding  |  Page 4) Tj ET
+Q
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 13 0 R /F2 14 0 R /F3 15 0 R /F4 16 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 4691 >>
+stream
+q
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 788.0 Tm (4. Retention: archive retention period, permissions, naming convention, and) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 775.0 Tm (retrieval process under the KU financial-records policy.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 762.0 Tm (5. Notifications and escalation: message templates, recipient groups, owner after) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 749.0 Tm (24 hours, and notification failure handling.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 736.0 Tm (6. Data governance: although the brief calls this financial operational data) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 723.0 Tm (rather than personal data, that classification must be confirmed with the) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 710.0 Tm (DPO/organization.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 697.0 Tm (7. Operational resilience: retry limits, manual recovery process, file size/type) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 684.0 Tm (limits, and duplicate policy.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 661.0 Tm (11. Acceptance measures) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 647.0 m 547 647.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 633.0 Tm (The first release should demonstrate:) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 616.0 Tm (- Separate invoice ingestion and routing for petty cash and credit card.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 603.0 Tm (- Extraction of all specified fields with field-level confidence values.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 590.0 Tm (- Automatic manual-review flagging below the 85% threshold.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 577.0 Tm (- A usable side-by-side review and edit flow, with approvals completed within the) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 564.0 Tm (  24-hour target and escalation support.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 551.0 Tm (- Approved-only posting into the matching tracking store.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 538.0 Tm (- Automatic running total, VAT total, and month-to-date calculation.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 525.0 Tm (- Searchable, metadata-tagged archived invoice copies.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 512.0 Tm (- Traceability from a tracking row back to its original source invoice and review) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 499.0 Tm (  decision.) Tj ET
+BT /F2 14 Tf 0.03 0.22 0.48 rg 1 0 0 1 48 476.0 Tm (12. Suggested next implementation steps) Tj ET
+0.55 0.70 0.86 RG 0.7 w 48 462.0 m 547 462.0 l S
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 448.0 Tm (1. Confirm the open decisions above with the professor/Finance stakeholders.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 435.0 Tm (2. Collect and classify the required training samples; define an annotation and) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 422.0 Tm (quality-check process.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 409.0 Tm (3. Define the tracking-store schema and calculation rules, then create a) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 396.0 Tm (representative set of mock invoices and expected outputs.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 383.0 Tm (4. Build the frontend review queue and side-by-side review workspace in Code/,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 370.0 Tm (using mock API data first.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 357.0 Tm (5. Establish the backend domain model, approval/audit APIs, and test fixtures.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 344.0 Tm (6. Add adapters for SharePoint, Azure AI Document Intelligence, Power Automate,) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 331.0 Tm (notifications, and the chosen tracking store.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 58 318.0 Tm (7. Test low-confidence, invalid, duplicate, failed, rejected, and overdue-review) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 66 305.0 Tm (scenarios before production use.) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 288.0 Tm () Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 271.0 Tm (Document status: Initial discovery and implementation blueprint. It records the supplied) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 258.0 Tm (requirements and identifies decisions that need stakeholder confirmation; it is not yet a) Tj ET
+BT /F1 9.2 Tf 0.09 0.13 0.20 rg 1 0 0 1 48 245.0 Tm (final technical specification.) Tj ET
+BT /F1 8.0 Tf 0.35 0.42 0.50 rg 1 0 0 1 48 25 Tm (AI Financial Automation  |  Project Understanding  |  Page 5) Tj ET
+Q
+endstream
+endobj
+13 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+14 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+15 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique >>
+endobj
+16 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000146 00000 n 
+0000000306 00000 n 
+0000005693 00000 n 
+0000005853 00000 n 
+0000011353 00000 n 
+0000011513 00000 n 
+0000017610 00000 n 
+0000017771 00000 n 
+0000023597 00000 n 
+0000023759 00000 n 
+0000028503 00000 n 
+0000028574 00000 n 
+0000028650 00000 n 
+0000028729 00000 n 
+trailer
+<< /Size 17 /Root 1 0 R >>
+startxref
+28798
+%%EOF
