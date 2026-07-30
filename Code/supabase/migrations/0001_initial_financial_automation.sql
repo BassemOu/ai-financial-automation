@@ -93,3 +93,35 @@ create policy "Authenticated users can read audit events" on public.invoice_audi
 create index invoices_status_idx on public.invoices(status);
 create index invoices_type_idx on public.invoices(invoice_type);
 create index invoice_audit_events_invoice_id_idx on public.invoice_audit_events(invoice_id);
+create index invoices_archive_search_idx on public.invoices(vendor_name, invoice_date, total_amount, invoice_type);
+
+-- Keep reviewer profiles and invoice modification times consistent with Auth/workflow events.
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  insert into public.profiles (id, full_name)
+  values (new.id, coalesce(new.raw_user_meta_data ->> 'full_name', new.email));
+  return new;
+end;
+$$;
+
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute procedure public.handle_new_user();
+
+create or replace function public.set_updated_at()
+returns trigger
+language plpgsql
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+create trigger invoices_set_updated_at
+  before update on public.invoices
+  for each row execute procedure public.set_updated_at();

@@ -1,11 +1,11 @@
 // Called by a secured Power Automate flow after Azure AI Document Intelligence finishes.
 // Deploy with `supabase functions deploy ingest-invoice --no-verify-jwt` only after
 // setting a separate shared webhook secret and validating it below.
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import { createClient } from '@supabase/supabase-js'
 
 const corsHeaders = { 'Content-Type': 'application/json' }
 
-Deno.serve(async (request) => {
+Deno.serve(async (request: Request) => {
   if (request.method !== 'POST') return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers: corsHeaders })
 
   const expectedSecret = Deno.env.get('POWER_AUTOMATE_WEBHOOK_SECRET')

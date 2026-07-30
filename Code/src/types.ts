@@ -4,8 +4,11 @@ export type InvoiceStatus = 'needs_review' | 'approved' | 'rejected' | 'failed' 
 export interface InvoiceLineItem {
   id: string
   description: string
+  descriptionConfidence: number
   quantity: number
+  quantityConfidence: number
   unitPrice: number
+  unitPriceConfidence: number
 }
 
 export interface InvoiceField {

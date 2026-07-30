@@ -38,10 +38,11 @@ Registration works locally too. Local demo users and the active session are stor
 - Login and registration screen
 - Invoice review queue with petty-cash and credit-card lanes
 - Low-confidence (below 85%) and overdue-review indicators
-- Side-by-side simulated document evidence and editable AI extraction fields
-- Approve/reject workflow that updates the dashboard locally
-- Approved-record tracking view with calculated totals and VAT
-- Supabase schema and secure ingestion-function scaffold
+- Side-by-side simulated document evidence and editable AI extraction fields, including line-item description, quantity, and unit price
+- Field-level confidence for invoice and line-item values, with below-85% review flags
+- Save-draft, audit-history, approve, and reject actions that update the dashboard locally
+- Approved-record tracking view with VAT, month-to-date, and running-balance calculations
+- Supabase schema plus secure ingestion and authenticated review-function scaffolds
 
 The document preview, Azure extraction, SharePoint links, notifications, and actual posting are deliberately marked as demos/pending integrations. The UI does not claim those services are connected.
 
@@ -58,7 +59,7 @@ The document preview, Azure extraction, SharePoint links, notifications, and act
 3. Apply `supabase/migrations/0001_initial_financial_automation.sql` in the Supabase SQL Editor, or use the Supabase CLI migration workflow.
 4. In Supabase Authentication, enable the desired sign-in provider. Email/password is sufficient for initial development; use KU Microsoft/Azure AD SSO if required later.
 5. Add RLS role management before any production use. The initial policies are deliberately broad for an internal prototype and must be reviewed with the Finance/KU security owner.
-6. For the future Power Automate integration, deploy `supabase/functions/ingest-invoice` and set the `POWER_AUTOMATE_WEBHOOK_SECRET` secret. Never expose this secret, Azure keys, or the Supabase service-role key in the Vite frontend.
+6. For the future Power Automate integration, deploy `supabase/functions/ingest-invoice` and set the `POWER_AUTOMATE_WEBHOOK_SECRET` secret. Deploy `supabase/functions/review-invoice` with standard JWT verification for authenticated Finance approvals. Never expose these secrets, Azure keys, or the Supabase service-role key in the Vite frontend.
 
 ### Optional Supabase CLI on macOS
 
@@ -75,8 +76,9 @@ Running Supabase fully locally also requires Docker Desktop. You can use a hoste
 
 ```sh
 npm run dev      # Start Vite development server
-npm run build    # Type-check and create a production build
-npm run lint     # Run Oxlint
+npm run build               # Type-check frontend and create a production build
+npm run typecheck:functions # Type-check Supabase Edge Functions with Deno runtime declarations
+npm run lint                # Run Oxlint
 npm run preview  # Preview a production build
 ```
 

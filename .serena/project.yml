@@ -131,6 +131,11 @@ read_only_memory_patterns: []
 # Example: ["_archive/.*", "_episodes/.*"]
 ignored_memory_patterns: []
 
+# Languages indexed by Serena. TypeScript covers React/TSX; Python covers the PDF renderer.
+languages:
+- typescript
+- python
+
 # list of language servers to start when using the LSP backend; choose from:
 #   ada                    al                     angular                ansible                bash
 #   bsl                    clojure                cpp                    cpp_ccls               crystal
@@ -164,4 +169,5 @@ ignored_memory_patterns: []
 # The first language server is the default language and the respective language server will be used as a fallback.
 # Note that when using the JetBrains backend, language servers are not used and this list is correspondingly ignored.
 language_servers:
+- typescript
 - python
