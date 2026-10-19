@@ -43,8 +43,9 @@ Registration works locally too. Local demo users and the active session are stor
 - Save-draft, audit-history, approve, and reject actions that update the dashboard locally
 - Approved-record tracking view with VAT, month-to-date, and running-balance calculations
 - Supabase schema plus secure ingestion and authenticated review-function scaffolds
+- When Supabase and Azure AI Document Intelligence are configured: direct invoice upload, live extraction via `extract-invoice`, and real persistence of invoices, drafts, approvals, and audit events
 
-The document preview, Azure extraction, SharePoint links, notifications, and actual posting are deliberately marked as demos/pending integrations. The UI does not claim those services are connected.
+SharePoint links, Power Automate intake, notifications, and posting to the SharePoint tracker are still pending integrations. The UI does not claim those services are connected.
 
 ## Configure Supabase later
 
@@ -56,10 +57,12 @@ The document preview, Azure extraction, SharePoint links, notifications, and act
    VITE_SUPABASE_ANON_KEY=your-anon-key
    ```
 
-3. Apply `supabase/migrations/0001_initial_financial_automation.sql` in the Supabase SQL Editor, or use the Supabase CLI migration workflow.
+3. Apply `supabase/migrations/0001_initial_financial_automation.sql` and `supabase/migrations/0002_invoice_documents_storage.sql` in the Supabase SQL Editor, or use the Supabase CLI migration workflow.
 4. In Supabase Authentication, enable the desired sign-in provider. Email/password is sufficient for initial development; use KU Microsoft/Azure AD SSO if required later.
 5. Add RLS role management before any production use. The initial policies are deliberately broad for an internal prototype and must be reviewed with the Finance/KU security owner.
-6. For the future Power Automate integration, deploy `supabase/functions/ingest-invoice` and set the `POWER_AUTOMATE_WEBHOOK_SECRET` secret. Deploy `supabase/functions/review-invoice` with standard JWT verification for authenticated Finance approvals. Never expose these secrets, Azure keys, or the Supabase service-role key in the Vite frontend.
+6. Deploy `supabase/functions/review-invoice` with standard JWT verification for authenticated Finance approvals.
+7. For live AI extraction, create an Azure AI Document Intelligence resource, then deploy `supabase/functions/extract-invoice` and set its `AZURE_DOC_INTEL_ENDPOINT` and `AZURE_DOC_INTEL_KEY` secrets. This enables the in-app "Upload invoice" action.
+8. For the future Power Automate/SharePoint intake, deploy `supabase/functions/ingest-invoice` and set the `POWER_AUTOMATE_WEBHOOK_SECRET` secret. Never expose any of these secrets, Azure keys, or the Supabase service-role key in the Vite frontend.
 
 ### Optional Supabase CLI on macOS
 
@@ -84,9 +87,9 @@ npm run preview  # Preview a production build
 
 ## Next integrations
 
-1. Replace demo invoice data with Supabase queries.
-2. Wire approvals, reviews, and audit events to Supabase.
-3. Create Power Automate cloud flows for SharePoint inbox triggers.
-4. Connect the flow to Azure AI Document Intelligence.
+1. ~~Replace demo invoice data with Supabase queries.~~ Done when Supabase is configured.
+2. ~~Wire approvals, reviews, and audit events to Supabase.~~ Done when Supabase is configured.
+3. ~~Connect live extraction to Azure AI Document Intelligence.~~ Done via `extract-invoice` when Azure is configured.
+4. Create Power Automate cloud flows for SharePoint inbox triggers, as an alternative intake path to direct upload.
 5. Send normalized extraction output to the secure Supabase `ingest-invoice` Edge Function.
 6. Post approved entries to the confirmed SharePoint List/Excel tracking store, archive source files, and send Teams/email notifications.

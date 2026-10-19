@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {
   AlertCircle,
@@ -24,6 +24,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { demoInvoices } from './data/demoData'
 import { currentDemoUser, demoAccountDetails, register, signIn, signOut } from './lib/demoAuth'
+import { fetchAuditEvents, fetchInvoices, saveInvoiceDraft, submitReview, uploadInvoiceDocument } from './lib/invoices'
 import { isSupabaseConfigured } from './lib/supabase'
 import type { FinanceUser, Invoice, InvoiceLineItem, InvoiceStatus, InvoiceType } from './types'
 
@@ -200,13 +201,51 @@ function Dashboard({ user, onSignOut }: { user: FinanceUser; onSignOut: () => vo
   const [search, setSearch] = useState('')
   const [menuOpen, setMenuOpen] = useState(false)
   const [reviewEvents, setReviewEvents] = useState<Record<string, string[]>>({})
+  const [uploading, setUploading] = useState(false)
+  const [workspaceError, setWorkspaceError] = useState<string | null>(null)
 
   const selected = invoices.find((invoice) => invoice.id === selectedId) ?? invoices[0]
   const [draft, setDraft] = useState(selected)
 
+  useEffect(() => {
+    if (!isSupabaseConfigured) return
+    fetchInvoices()
+      .then((loaded) => {
+        setInvoices(loaded)
+        if (loaded[0]) {
+          setSelectedId(loaded[0].id)
+          setDraft(loaded[0])
+        }
+      })
+      .catch((error) => setWorkspaceError(error instanceof Error ? error.message : 'Unable to load invoices'))
+  }, [])
+
+  useEffect(() => {
+    if (!isSupabaseConfigured) return
+    fetchAuditEvents(selectedId)
+      .then((events) => setReviewEvents((current) => ({ ...current, [selectedId]: events })))
+      .catch(() => {})
+  }, [selectedId])
+
   function selectInvoice(invoice: Invoice) {
     setSelectedId(invoice.id)
     setDraft(invoice)
+  }
+
+  async function handleUpload(file: File, invoiceType: InvoiceType) {
+    setUploading(true)
+    setWorkspaceError(null)
+    try {
+      await uploadInvoiceDocument(file, invoiceType)
+      const loaded = await fetchInvoices()
+      setInvoices(loaded)
+      const created = loaded.find((invoice) => invoice.sourceFileName === file.name) ?? loaded[0]
+      if (created) selectInvoice(created)
+    } catch (error) {
+      setWorkspaceError(error instanceof Error ? error.message : 'Unable to extract this document')
+    } finally {
+      setUploading(false)
+    }
   }
 
   const queue = useMemo(() => invoices.filter((invoice) => {
@@ -228,6 +267,7 @@ function Dashboard({ user, onSignOut }: { user: FinanceUser; onSignOut: () => vo
   function saveDraft() {
     setInvoices((current) => current.map((invoice) => invoice.id === draft.id ? draft : invoice))
     setReviewEvents((current) => ({ ...current, [draft.id]: [...(current[draft.id] ?? []), `Draft saved at ${new Date().toLocaleTimeString()}`] }))
+    if (isSupabaseConfigured) void saveInvoiceDraft(draft).catch((error) => setWorkspaceError(error instanceof Error ? error.message : 'Unable to save draft'))
   }
 
   function updateLineItem(index: number, field: keyof Pick<InvoiceLineItem, 'description' | 'quantity' | 'unitPrice'>, value: string) {
@@ -241,10 +281,17 @@ function Dashboard({ user, onSignOut }: { user: FinanceUser; onSignOut: () => vo
   }
 
   function commit(status: 'approved' | 'rejected') {
+    const rejectionReason = status === 'rejected' ? window.prompt('Reason for rejection?')?.trim() : undefined
+    if (status === 'rejected' && !rejectionReason) return
+
     const updated = { ...draft, status }
     setInvoices((current) => current.map((invoice) => invoice.id === updated.id ? updated : invoice))
     setDraft(updated)
     setReviewEvents((current) => ({ ...current, [updated.id]: [...(current[updated.id] ?? []), `Invoice ${status} at ${new Date().toLocaleTimeString()}`] }))
+    if (isSupabaseConfigured) {
+      const correctedFields = { vendor: draft.vendor.value, invoiceNumber: draft.invoiceNumber.value, invoiceDate: draft.invoiceDate.value, category: draft.category.value, currency: draft.currency.value, totalAmount: draft.totalAmount.value, vatAmount: draft.vatAmount.value }
+      void submitReview(draft.id, status, correctedFields, rejectionReason).catch((error) => setWorkspaceError(error instanceof Error ? error.message : 'Unable to submit review'))
+    }
   }
 
   const tabButton = (target: Screen, icon: React.ReactNode, label: string) => <button onClick={() => setScreen(target)} className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${screen === target ? 'bg-blue-700 text-white shadow-sm' : 'text-slate-300 hover:bg-white/10 hover:text-white'}`}>{icon}{label}</button>
@@ -269,6 +316,8 @@ function Dashboard({ user, onSignOut }: { user: FinanceUser; onSignOut: () => vo
             <Metric icon={<CircleDollarSign size={20} />} label="Approved spend" value={formatMoney(String(metrics.monthTotal))} tone="violet" detail="Demo approved records" />
           </section>
 
+          {isSupabaseConfigured && <UploadInvoicePanel uploading={uploading} error={workspaceError} onUpload={handleUpload} onDismissError={() => setWorkspaceError(null)} />}
+
           <section className="mt-6 grid gap-6 xl:grid-cols-[0.92fr_1.48fr]">
             <div className="min-w-0 rounded-2xl border border-slate-200 bg-white shadow-sm">
               <div className="border-b border-slate-100 p-4"><div className="flex items-center justify-between"><div><h2 className="font-semibold text-slate-900">Review queue</h2><p className="mt-1 text-sm text-slate-500">AI-extracted records awaiting Finance approval.</p></div><span className="rounded-lg bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700">{queue.length} shown</span></div><div className="mt-4 flex gap-2"><label className="relative min-w-0 flex-1"><Search className="absolute left-3 top-2.5 text-slate-400" size={16} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search vendor or invoice" className="w-full rounded-lg border border-slate-200 py-2 pl-9 pr-3 text-sm outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100" /></label><button onClick={() => setAttentionOnly((value) => !value)} className={`rounded-lg border px-3 text-sm font-medium ${attentionOnly ? 'border-amber-300 bg-amber-50 text-amber-800' : 'border-slate-200 text-slate-600'}`}><Filter size={16} /></button></div><div className="mt-3 flex gap-2"><button onClick={() => setTypeFilter('all')} className={`rounded-full px-3 py-1 text-xs font-medium ${typeFilter === 'all' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600'}`}>All</button><button onClick={() => setTypeFilter('petty_cash')} className={`rounded-full px-3 py-1 text-xs font-medium ${typeFilter === 'petty_cash' ? 'bg-amber-500 text-white' : 'bg-amber-50 text-amber-800'}`}>Petty cash</button><button onClick={() => setTypeFilter('credit_card')} className={`rounded-full px-3 py-1 text-xs font-medium ${typeFilter === 'credit_card' ? 'bg-cyan-600 text-white' : 'bg-cyan-50 text-cyan-800'}`}>Credit card</button></div></div>
@@ -285,6 +334,30 @@ function Dashboard({ user, onSignOut }: { user: FinanceUser; onSignOut: () => vo
 function Metric({ icon, label, value, detail, tone }: { icon: React.ReactNode; label: string; value: string | number; detail: string; tone: 'blue' | 'amber' | 'emerald' | 'violet' }) {
   const tones = { blue: 'bg-blue-50 text-blue-700', amber: 'bg-amber-50 text-amber-700', emerald: 'bg-emerald-50 text-emerald-700', violet: 'bg-violet-50 text-violet-700' }
   return <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"><div className="flex items-start justify-between"><div><p className="text-sm font-medium text-slate-500">{label}</p><p className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">{value}</p></div><span className={`grid h-10 w-10 place-items-center rounded-xl ${tones[tone]}`}>{icon}</span></div><p className="mt-3 text-xs text-slate-400">{detail}</p></div>
+}
+
+function UploadInvoicePanel({ uploading, error, onUpload, onDismissError }: { uploading: boolean; error: string | null; onUpload: (file: File, invoiceType: InvoiceType) => void; onDismissError: () => void }) {
+  const [invoiceType, setInvoiceType] = useState<InvoiceType>('petty_cash')
+
+  function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (file) onUpload(file, invoiceType)
+  }
+
+  return <section className="mt-6 rounded-2xl border border-dashed border-blue-300 bg-blue-50/40 p-4">
+    <div className="flex flex-wrap items-center justify-between gap-3">
+      <div><p className="text-sm font-semibold text-slate-900">Upload an invoice for live AI extraction</p><p className="mt-1 text-xs text-slate-500">Runs Azure AI Document Intelligence and adds the result to the review queue.</p></div>
+      <div className="flex items-center gap-2">
+        <select value={invoiceType} onChange={(event) => setInvoiceType(event.target.value as InvoiceType)} className="rounded-lg border border-slate-200 bg-white px-2 py-2 text-sm"><option value="petty_cash">Petty cash</option><option value="credit_card">Credit card</option></select>
+        <label className={`flex items-center gap-2 rounded-lg bg-blue-700 px-3 py-2 text-sm font-semibold text-white transition hover:bg-blue-800 ${uploading ? 'pointer-events-none opacity-60' : 'cursor-pointer'}`}>
+          {uploading ? 'Extracting…' : 'Upload invoice'}
+          <input type="file" accept=".pdf,.png,.jpg,.jpeg" className="hidden" disabled={uploading} onChange={handleFileChange} />
+        </label>
+      </div>
+    </div>
+    {error && <div className="mt-3 flex items-center justify-between gap-2 rounded-xl bg-rose-50 p-3 text-sm text-rose-700 ring-1 ring-rose-200"><span>{error}</span><button onClick={onDismissError} className="text-xs font-semibold underline">Dismiss</button></div>}
+  </section>
 }
 
 function StatusBadge({ status }: { status: InvoiceStatus }) { return <span className={`shrink-0 rounded-full px-2 py-1 text-[11px] font-semibold ring-1 ring-inset ${statusStyles[status]}`}>{statusLabels[status]}</span> }
